@@ -1,6 +1,25 @@
 .main-header {
+  display: flex;
+  flex-direction: column;
+  min-height: 445px;
   background-color: @backgroundblue;
   background-image: url("../img/back-mobile.jpg");
   background-repeat: no-repeat;
-  background-position: 0 0;
+  background-position: 50% 56px;
+}
+
+@media (min-width: @tablet-width) {
+  width: 768px;
+}
+
+@media (min-width: @desktop-width) {
+  width: 1200px;
+}
+
+.main-header__logo {
+  text-align: center;
+}
+
+.main-header__intro {
+  text-align: center;
 }
