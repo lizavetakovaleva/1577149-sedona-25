@@ -4,11 +4,6 @@
   font-family: "PT Sans", "Arial", sans-serif;
   line-height: 21px;
   text-transform: uppercase;
-
-  @media (min-width: @desktop-width) {
-    width: 1200px;
-    margin: 0 auto;
-  }
 }
 
 .page__body {
@@ -16,4 +11,18 @@
   margin: 0;
   background-color: @white;
   color: @black;
+}
+
+@media (min-width: @tablet-width) {
+  .page {
+    width: 768px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .page {
+    width: 1200px;
+    margin: 0 auto;
+  }
 }
