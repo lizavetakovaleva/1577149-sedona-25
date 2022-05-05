@@ -1,5 +1,5 @@
 .site-list {
-  width: 320px;
+  width: 100%;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -24,10 +24,14 @@
 @media (min-width: @tablet-width) {
   .site-list {
     width: 768px;
+    /* display: grid-inline;
+    grid-template-columns: repeat(4, 200px); */
+    display: grid-inline;
   }
 
   .site-list__item {
     background-color: @white;
+    outline: 1px solid @blue;
   }
 
   .site-list__link {

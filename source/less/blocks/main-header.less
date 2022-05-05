@@ -1,16 +1,33 @@
 .main-header {
+  position: relative;
   display: flex;
   flex-direction: column;
   min-height: 445px;
   background-color: @backgroundblue;
-  background-image: url("../img/back-mobile.jpg");
+  background-image: url("../img/back-desktop.jpg");
   background-repeat: no-repeat;
-  background-position: 50% 56px;
+  background-position: 50% -10%;
+}
+
+.main-header__logo {
+  position: absolute;
+  transform: translateX(-50%);
+  top: 0;
+  left: 50%;
+}
+
+.main-header__intro {
+  padding-top: 70px;
+  text-align: center;
 }
 
 @media (min-width: @tablet-width) {
   .main-header {
     width: 768px;
+  }
+
+  .main-header__logo {
+    z-index: 10;
   }
 }
 
@@ -18,12 +35,4 @@
   .main-header {
     width: 1200px;
   }
-}
-
-.main-header__logo {
-  text-align: center;
-}
-
-.main-header__intro {
-  text-align: center;
 }
