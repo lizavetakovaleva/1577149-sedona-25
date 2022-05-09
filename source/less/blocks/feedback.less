@@ -2,8 +2,10 @@
   width: 100%;
 }
 
-.feedback-wrapper {
+.feedback__wrapper {
   margin: 0 auto;
+  margin-bottom: 64px;
+  padding: 64px;
 }
 
 .feedback__fieldset {
@@ -19,10 +21,11 @@
   font-weight: 700;
   font-size: 18px;
   line-height: 26px;
+  text-align: center;
 }
 
 .feedback__input {
-  width: 280px;
+  width: auto;
   padding: 16px;
   font-weight: 700;
   font-size: 18px;
@@ -39,29 +42,72 @@
   background-color: @formgrey;
 }
 
+.feedback__input-wrapper {
+  position: relative;
+}
+
+.feedback__input-contact {
+  padding-right: 60px;
+}
+
+.feedback__icon {
+  position: absolute;
+  top: 0;
+}
+
 @media (min-width: @tablet-width) {
-  .feedback-wrapper {
+  .feedback__wrapper {
     display: grid;
+    gap: 48px;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: "fir fir" "sec sec" "thr thr" "fou fou" "fiv fiv";
+    grid-template-areas: "name contacts" "impres impres" "attr attr" "feedback feedback" "submit submit";
   }
 
   .feedback__fieldset {
     &:first-child {
-      grid-area: fir;
+      grid-area: name;
       display: flex;
       flex-direction: column;
     }
 
     &:nth-child(2) {
-      grid-area: fir;
+      grid-area: contacts;
       display: flex;
       flex-direction: column;
     }
 
     &:nth-child(3) {
-      grid-area: sec;
+      grid-area: impres;
     }
-    outline: 1px solid #ffff00;
+
+    &:nth-child(4) {
+      grid-area: attr;
+    }
+
+    &:nth-child(5) {
+      grid-area: feedback;
+    }
+  }
+
+  .feedback__wrapper-button {
+    grid-area: submit;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0 60px;
+  }
+
+  .feedback__fieldset-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: baseline;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .feedback__fieldset-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
