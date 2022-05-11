@@ -43,7 +43,7 @@
       </nav>
       <section class="main-header__intro">
         <div class="main-header__wrapper">
-          <img src="img/svg/catalog-logotype.svg" width="229" height="39" alt="Welcome to the gorgeous Sedona">
+          <img src="img/svg/text-index.svg" width="282" height="214" alt="Welcome to the gorgeous Sedona">
         </div>
       </section>
     </header>
@@ -61,49 +61,53 @@
         <div class="feedback__wrapper">
           <fieldset class="feedback__fieldset">
             <legend class="feedback__legend">Представьтесь:</legend>
-            <label class="feedback__label">Имя*:
-              <input class="feedback__input" type="text" value="Пётр" placeholder="Имя" required>
-            </label>
-            <label class="feedback__label">Фамилия*:
-              <input class="feedback__input" type="text" value="Пустота" placeholder="Фамилия" required>
-            </label>
-            <label class="feedback__label">Отчество:
-              <input class="feedback__input" type="text" value="Викторович" placeholder="Отчество">
-            </label>
+            <label class="feedback__label" for="name">Имя*:</label>
+            <input class="feedback__input" type="text" value="Пётр" placeholder="Имя" id="name" required>
+
+            <label class="feedback__label" for="surname">Фамилия*:</label>
+            <input class="feedback__input" type="text" value="Пустота" placeholder="Фамилия" id="surname" required>
+
+            <label class="feedback__label" for="patronymic">Отчество:</label>
+            <input class="feedback__input" type="text" value="Викторович" placeholder="Отчество" id="patronymic">
           </fieldset>
 
           <fieldset class="feedback__fieldset">
             <legend class="feedback__legend">Контактная информация:</legend>
-            <label class="feedback__label">Контактный телефон*:
-              <input class="feedback__input" type="tel" placeholder="Введите телефон" required>
-              <svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <label class="feedback__label" for="phone">Контактный телефон*:</label>
+            <div class="feedback__input-wrapper">
+              <input class="feedback__input feedback__input-contact" type="tel" placeholder="Введите телефон" id="phone" required>
+              <svg class="feedback__icon" width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="58" height="58" fill="#E6E6E6"/>
                 <path d="M23.6 27.8C25 30.6 27.4 32.9 30.2 34.4L32.4 32.2C32.7 31.9 33.1 31.8 33.4 32C34.5 32.4 35.7 32.6 37 32.6C37.6 32.6 38 33 38 33.6V37C38 37.6 37.6 38 37 38C27.6 38 20 30.4 20 21C20 20.4 20.4 20 21 20H24.5C25.1 20 25.5 20.4 25.5 21C25.5 22.2 25.7 23.4 26.1 24.6C26.2 24.9 26.1 25.3 25.9 25.6L23.6 27.8Z" fill="#010101"/>
               </svg>
-            </label>
-            <label class="feedback__label">Электронная почта*:
-              <input class="feedback__input" type="email" placeholder="Введите e-mail" required>
-              <svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+            </div>
+
+            <label class="feedback__label" for="email">Электронная почта*:</label>
+            <div class="feedback__input-wrapper">
+              <input class="feedback__input feedback__input-contact" type="email" placeholder="Введите e-mail" id="email" required>
+              <svg class="feedback__icon" width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="58" height="58" fill="#E6E6E6"/>
                 <path d="M29 31C28.7 31 28.5 30.9 28 30.7L21 27V34C21 34.5 21.5 35 22 35H36C36.5 35 37 34.5 37 34V27L30 30.7C29.5 30.9 29.3 31 29 31ZM36 23H22C21.5 23 21 23.5 21 24V24.8L29 29L37 24.8V24C37 23.5 36.5 23 36 23Z" fill="black"/>
               </svg>
-            </label>
+          </div>
           </fieldset>
 
           <fieldset class="feedback__fieldset">
             <legend class="feedback__legend">Ваше общее впечатление:</legend>
-            <label class="feedback__label">
-              <input class="feedback__radio" type="radio" name="feedback" value="posivive" checked>
-              Скорее положительное
-            </label>
-            <label class="feedback__label">
-              <input class="feedback__radio" type="radio" name="feedback" value="negative">
-              Скорее отрицательное
-            </label>
-            <label class="feedback__label">
-              <input class="feedback__radio" type="radio" name="feedback" value="no-answer">
-              Затрудняюсь ответить
-            </label>
+            <div class="feedback__fieldset-wrapper">
+              <label class="feedback__label">
+                <input class="feedback__radio" type="radio" name="feedback" value="posivive" checked>
+                Скорее положительное
+              </label>
+              <label class="feedback__label">
+                <input class="feedback__radio" type="radio" name="feedback" value="negative">
+                Скорее отрицательное
+              </label>
+              <label class="feedback__label">
+                <input class="feedback__radio" type="radio" name="feedback" value="no-answer">
+                Затрудняюсь ответить
+              </label>
+            </div>
           </fieldset>
 
           <fieldset class="feedback__fieldset">
@@ -131,10 +135,10 @@
             <textarea class="feedback__text" name="text" placeholder="Опишите подробно все свои восторги"></textarea>
           </fieldset>
 
-          <div class="feedback__wrapper">
+          <div class="feedback__wrapper-button">
             <button class="feedback__button button" type="button">ОТПРАВИТЬ ОТЗЫВ</button>
+            <span class="feedback__footnote">* — обязательные поля</span>
           </div>
-          <span class="feedback__footnote">* — обязательные поля</span>
         </div>
       </form>
     </main>
@@ -186,7 +190,7 @@
       </div>
     </footer>
 
-    <div class="feedback-modal">
+    <div class="feedback-modal feedback-modal--error">
       <div class="feedback-modal__wrapper">
         <span class="feedback-modal__title">ЧТО-ТО ПОШЛО НЕ ТАК!</span>
         <p class="feedback-modal__description">Проверьте поля, выделенные красным, скорее всего вы забыли их заполнить</p>
@@ -194,11 +198,13 @@
       </div>
     </div>
 
-    <div class="feedback-modal">
+    <div class="feedback-modal feedback-modal--sucsess">
       <div class="feedback-modal__wrapper">
         <span class="feedback-modal__title">Ваш отзыв отправлен!</span>
         <p class="feedback-modal__description">Спасибо за ваше участие, ваш отзыв уже поступил к нам. В ближайшее время мы опубликуем его на сайте.</p>
-        <button class="button" type="button">Закрыть окно</button>
+        <div class="feedback-modal__button-wrapper">
+          <button class="button" type="button">Закрыть окно</button>
+        </div>
       </div>
     </div>
   </body>
