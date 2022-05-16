@@ -26,6 +26,10 @@
 }
 
 .search__button {
+  display: block;
+  width: 284px;
+  height: auto;
+  margin: 0 auto;
   padding: 16px 49px;
   font-weight: 700;
   font-size: 21px;
@@ -33,4 +37,19 @@
   background-color: @blue;
   color: @white;
   text-decoration: none;
+
+  &:hover {
+    background-color: #669ec0;
+  }
+
+  &:active {
+    background-color: #5496bd;
+    color: fade(@white, 30%);
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .search__button {
+    width: 458px;
+  }
 }

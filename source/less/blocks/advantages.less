@@ -57,12 +57,14 @@
 }
 
 .advantages__item-photo {
+  display: block;
   width: 100%;
   height: auto;
   object-fit: contain;
 }
 
 .advantages__title-accent {
+  margin: 0;
   padding: 54px 22px 11px 16px;
   font-size: 18px;
   font-weight: 700;
@@ -81,17 +83,18 @@
 
 .advantages__list--benefit {
   margin: 0;
-  padding: 23px 18px 0;
   background-color: @white;
 }
 
 .advantages__item--benefit {
+  padding-top: 11px;
   padding-right: 18px;
   padding-left: 58px;
   padding-bottom: 22px;
   background-color: @white;
   color: @black;
   text-align: left;
+  background-position: top left;
 }
 
 .advantages__item--benefit:nth-child(1) {
@@ -155,19 +158,48 @@
     font-weight: 400;
   }
 
+  .advantages__reasons {
+    padding: 40px 32px 43px;
+  }
+
   .advantages__item-accent {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
+  }
 
-    &:nth-child(2) {
-      justify-content: flex-start;
-      flex-direction: row-reverse;
-    }
+  .advantages__item-accent-wrapper {
+    display: flex;
+    flex-wrap: no-wrap;
+  }
+
+  .advantages__item-accent-wrapper--second {
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+  }
+
+  // В планшетной версии фото растягивается и сплющивает текстовое описание
+  // В планшетной версии картинки вылезают вбок
+
+  .advantages__item-photo {
+    width: 100%;
+    object-fit: cover;
   }
 
   .advantages__list--benefit {
     display: flex;
-    justify-content: space-around;
+  }
+
+  .advantages__item--benefit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    padding-top: 120px;
+    text-align: center;
+    background-size: 75px;
+    background-position: 50% 10%;
   }
 
   .advantages__item-wrapper {
@@ -180,6 +212,14 @@
   }
 }
 
+@media (min-width: @desktop-width) {
+  .advantages__reasons {
+    padding: 47px 52px 56px;
+  }
+}
+
+//Белый треугольник перед первым преимуществом съедается при растяжении страницы х__Х
+
 @media (max-width: @mobile-width-only) {
   .advantages__item-accent:first-child::before {
     position: relative;
@@ -189,10 +229,10 @@
     content: "";
     width: 100%;
     height: 37px;
-    background-image: url("../img/white_figure.svg");
+    background-image: url("../img/svg/white_figure.svg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: bottom center;
+    background-position: top center;
   }
 }
 

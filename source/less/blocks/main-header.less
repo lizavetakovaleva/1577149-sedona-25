@@ -2,11 +2,6 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  min-height: 445px;
-  background-color: @backgroundblue;
-  background-image: url("../img/back-desktop.jpg");
-  background-repeat: no-repeat;
-  background-position: 50% -10%;
 }
 
 .main-header__logo {
@@ -17,12 +12,28 @@
 }
 
 .main-header__intro {
+  display: block;
+  min-height: 389px;
+  background-color: @backgroundblue;
+  background-image: url("/img/svg/intro-triangle.svg"), url("../img/back-desktop.jpg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: bottom center, 50% 20%;
+  background-size: auto, cover;
   padding-top: 70px;
   text-align: center;
 }
 
 @media (min-width: @tablet-width) {
+  .main-header__intro {
+    min-height: 518px;
+  }
+
   .main-header__logo {
     z-index: 5;
+  }
+
+  .main-header__image {
+    width: 461px;
+    height: 350px;
   }
 }
