@@ -1,10 +1,10 @@
 .advantages__wrapper {
-  padding: 39px 18px 33px;
+  padding: 0 18px 33px;
 }
 
 .advantages__slogan {
   margin: 0;
-  padding: 32px 6% 0;
+  padding: 23px 10px 0;
   font-weight: 700;
   font-size: 18px;
   line-height: 26px;
@@ -46,8 +46,10 @@
 .advantages__reasons-accent {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   margin: 0;
+  padding: 39px 16px 35px;
 }
 
 .advantages__item-accent {
@@ -56,28 +58,32 @@
   text-align: center;
 }
 
+//Не получается разместить картинку как в макете
+
 .advantages__item-photo {
   display: block;
   width: 100%;
   height: auto;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .advantages__title-accent {
   margin: 0;
-  padding: 54px 22px 11px 16px;
+  //padding: 54px 22px 11px 16px;
+  padding-bottom: 22px;
   font-size: 18px;
   font-weight: 700;
   line-height: 26px;
 }
 
 .advantages__number-accent {
+  padding-bottom: 22px;
   font-weight: 700;
 }
 
 .advantages__description-accent {
   margin: 0;
-  padding: 17px 22px 43px 16px;
+  //padding: 17px 22px 43px 16px;
   font-weight: 700;
 }
 
@@ -87,14 +93,16 @@
 }
 
 .advantages__item--benefit {
-  padding-top: 11px;
-  padding-right: 18px;
-  padding-left: 58px;
-  padding-bottom: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  padding: 11px 18px 22px 68px;
   background-color: @white;
   color: @black;
   text-align: left;
-  background-position: top left;
+  //background-position: top left;
+  background-position: 20px 18px;
 }
 
 .advantages__item--benefit:nth-child(1) {
@@ -108,11 +116,13 @@
 }
 
 .advantages__item--benefit:nth-child(3) {
+  //padding-bottom: 52px;
   background-image: url("../img/svg/gift.svg");
   background-repeat: no-repeat;
 }
 
 .advantages__title--benefit {
+  padding-top: 18px;
   margin: 0;
   font-weight: 700;
   font-size: 18px;
@@ -136,30 +146,49 @@
   border: none;
 }
 
+//Планшет
+
 @media (min-width: @tablet-width) {
   .advantages__wrapper {
     padding: 0 32px;
   }
 
   .advantages__slogan {
-    padding: 48px 124px 0;
+    //padding: 48px 124px 0;
+    padding-top: 53px;
     font-size: 21px;
   }
 
   .advantages__intro {
-    padding: 38px 124px 0;
+    padding-bottom: 55px;
+  }
+
+  .advantages__title {
+    font-size: 21px;
+    line-height: 26px;
   }
 
   .advantages__title-accent {
+    padding-bottom: 10px;
     font-size: 21px;
   }
 
+  .advantages__number-accent {
+    font-weight: 400;
+  }
+
   .advantages__description-accent {
+    padding-bottom: 10px;
     font-weight: 400;
   }
 
   .advantages__reasons {
     padding: 40px 32px 43px;
+  }
+
+  .advantages__reasons-accent {
+    padding-right: 30px;
+    padding-left: 30px;
   }
 
   .advantages__item-accent {
@@ -169,17 +198,26 @@
   }
 
   .advantages__item-accent-wrapper {
-    display: flex;
-    flex-wrap: no-wrap;
+    display: grid;
+    grid-template-columns: 1fr 512px;
+    grid-template-areas: "txt img";
+    align-items: stretch;
+
+    .advantages__item-photo {
+      grid-area: img;
+    }
+
+    .advantages__reasons {
+      grid-area: txt;
+    }
   }
 
   .advantages__item-accent-wrapper--second {
-    justify-content: flex-start;
-    flex-direction: row-reverse;
+    display: grid;
+    grid-template-columns: 512px 1fr;
+    grid-template-areas: "img txt";
+    align-items: stretch;
   }
-
-  // В планшетной версии фото растягивается и сплющивает текстовое описание
-  // В планшетной версии картинки вылезают вбок
 
   .advantages__item-photo {
     width: 100%;
@@ -188,18 +226,25 @@
 
   .advantages__list--benefit {
     display: flex;
+    padding-bottom: 20px;
   }
 
   .advantages__item--benefit {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     margin: 0;
-    padding: 0;
-    padding-top: 120px;
+    padding: 138px 34px 25px;
     text-align: center;
     background-size: 75px;
-    background-position: 50% 10%;
+    background-position: 50% 22%;
+  }
+
+  .advantages__title--benefit {
+    font-size: 21px;
+    line-height: 26px;
+    padding-bottom: 10px;
   }
 
   .advantages__item-wrapper {
@@ -208,17 +253,53 @@
   }
 
   .advantages__item-border {
+    padding: 30px 50px 30px;
     border: none;
   }
 }
+
+//Десктоп
 
 @media (min-width: @desktop-width) {
   .advantages__reasons {
     padding: 47px 52px 56px;
   }
-}
 
-//Белый треугольник перед первым преимуществом съедается при растяжении страницы х__Х
+  .advantages__item-accent-wrapper {
+    grid-template-columns: 1fr 800px;
+  }
+
+  .advantages__item-accent-wrapper--second {
+    grid-template-columns: 800px 1fr;
+  }
+
+  .advantages__wrapper {
+    margin: auto;
+    max-width: 1200px;
+  }
+
+  .advantages__slogan {
+    padding: 59px 0 30px;
+  }
+
+  .advantages__intro {
+    //padding: 0 359px 42px;
+    padding: 0 0 42px;
+  }
+
+  .advantages__item--benefit {
+    padding: 139px 58px 70px;
+  }
+
+  .advantages__item-border {
+    padding: 42px 50px 55px;
+  }
+
+  .advantages__title {
+    font-size: 21px;
+    line-height: 26px;
+  }
+}
 
 @media (max-width: @mobile-width-only) {
   .advantages__item-accent:first-child::before {
@@ -232,21 +313,6 @@
     background-image: url("../img/svg/white_figure.svg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: top center;
-  }
-}
-
-@media (min-width: @desktop-width) {
-  .advantages__wrapper {
-    margin: auto;
-    max-width: 1200px;
-  }
-
-  .advantages__slogan {
-    padding: 59px 359px 36px;
-  }
-
-  .advantages__intro {
-    padding: 0 359px 42px;
+    background-position: bottom center;
   }
 }
