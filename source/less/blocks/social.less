@@ -1,16 +1,31 @@
 .social__list {
+  display: flex;
+  justify-content: center;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-@media (min-width: @tablet-width) {
-  .social__list {
-    display: flex;
-    justify-content: space-around;
+.social__item {
+  margin-right: 6px;
+}
+
+.social__link svg {
+  fill: @blue;
+
+  &:hover {
+    fill: #669ec0;
   }
 
-  .social__item {
-    margin-right: 6px;
+  &:active {
+    fill: #5496bd, fade(@white, 30%);
+  }
+}
+
+.social__link path {
+  fill: @white;
+
+  &:active {
+    fill: fade(@white, 30%);
   }
 }

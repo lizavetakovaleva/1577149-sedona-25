@@ -1,0 +1,39 @@
+.copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 40px 95px 20px;
+}
+
+.copyright__text {
+  vertical-align: middle;
+  margin-right: 10px;
+  color: @black;
+
+  &:hover {
+    color: @blue;
+  }
+
+  &:active {
+    color: #b3b3b3;
+  }
+}
+
+.copyright__link {
+  fill: @black;
+
+  &:hover {
+    fill: @blue;
+  }
+
+  &:active {
+    fill: #b3b3b3;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .copyright {
+    padding: 0;
+  }
+}
