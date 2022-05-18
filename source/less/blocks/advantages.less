@@ -58,11 +58,10 @@
   text-align: center;
 }
 
-//Не получается разместить картинку как в макете
-
 .advantages__item-photo {
   display: block;
   width: 100%;
+  min-height: 260px;
   height: auto;
   object-fit: cover;
 }
@@ -155,21 +154,29 @@
 
   .advantages__slogan {
     //padding: 48px 124px 0;
-    padding-top: 53px;
+    padding-top: 54px;
     font-size: 21px;
   }
 
   .advantages__intro {
-    padding-bottom: 55px;
+    padding-top: 31px;
+    padding-bottom: 53px;
   }
 
   .advantages__title {
+    width: 124px; //проверка ширины
+    margin: 0 auto 20px;
     font-size: 21px;
     line-height: 26px;
   }
 
+  /* .advantages__description {
+    //width: 178px;
+  } */
+
   .advantages__title-accent {
-    padding-bottom: 10px;
+    width: 150px;
+    padding-bottom: 13px;
     font-size: 21px;
   }
 
@@ -187,6 +194,7 @@
   }
 
   .advantages__reasons-accent {
+    width: 196px; //проверяем ширину
     padding-right: 30px;
     padding-left: 30px;
   }
@@ -226,6 +234,7 @@
 
   .advantages__list--benefit {
     display: flex;
+    flex-direction: row;
     padding-bottom: 20px;
   }
 
@@ -244,8 +253,12 @@
   .advantages__title--benefit {
     font-size: 21px;
     line-height: 26px;
-    padding-bottom: 10px;
+    margin-bottom: 8px;
   }
+
+  /* .advantages__description--benefit {
+    width: 170px;
+  } */ //при задании ширины тексту ячейки схлопываются и уходят влево
 
   .advantages__item-wrapper {
     display: flex;
@@ -253,8 +266,16 @@
   }
 
   .advantages__item-border {
-    padding: 30px 50px 30px;
+    padding: 37px 0 30px; // проверка паддингов
     border: none;
+  }
+
+  .advantages__description--border {
+    width: 180px;
+  }
+
+  .advantages__description--border2 {
+    width: 130px;
   }
 }
 
@@ -263,6 +284,12 @@
 @media (min-width: @desktop-width) {
   .advantages__reasons {
     padding: 47px 52px 56px;
+  }
+
+  .advantages__reasons-accent {
+    width: 264px; //проверяем ширину
+    padding-right: 70px;
+    padding-left: 67px;
   }
 
   .advantages__item-accent-wrapper {

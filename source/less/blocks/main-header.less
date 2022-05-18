@@ -13,7 +13,7 @@
 
 .main-header__image {
   position: absolute;
-  top: 25%;
+  top: 23%;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -29,17 +29,47 @@
   text-align: center;
 }
 
-@media (min-width: @tablet-width) {
-  .main-header__intro {
-    min-height: 518px;
-  }
+.main-header__intro--catalog {
+  min-height: 158px;
+}
 
+.main-header__image--catalog {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+//Планшет
+
+@media (min-width: @tablet-width) {
   .main-header__logo {
     z-index: 5;
+  }
+
+  .main-header__intro {
+    height: 520px;
   }
 
   .main-header__image {
     width: 461px;
     height: 350px;
+  }
+
+  .main-header__intro--catalog {
+    min-height: 290px;
+  }
+
+  .main-header__image--catalog {
+    width: 461px;
+    top: 12%;
+  }
+}
+
+//Десктоп
+
+@media (min-width: @desktop-width) {
+  .main-header__intro--catalog {
+    min-height: 303px;
   }
 }
