@@ -44,9 +44,9 @@
           </ul>
         </div>
       </nav>
-      <section class="main-header__intro">
+      <section class="main-header__intro main-header__intro--pages">
         <div class="main-header__wrapper">
-          <img src="img/svg/text-index.svg" width="282" height="214" alt="Welcome to the gorgeous Sedona">
+          <img class="main-header__image main-header__image--pages" src="img/svg/text-sedona.svg" width="282" height="214" alt="Welcome to the gorgeous Sedona">
         </div>
       </section>
     </header>
@@ -97,16 +97,16 @@
 
           <fieldset class="feedback__fieldset">
             <legend class="feedback__legend">Ваше общее впечатление:</legend>
-            <div class="feedback__fieldset-wrapper">
-              <label class="feedback__label">
+            <div class="feedback__fieldset-wrapper feedback__fieldset-wrapper--radio">
+              <label class="feedback__label feedback__label--radio">
                 <input class="feedback__radio" type="radio" name="feedback" value="posivive" checked>
                 Скорее положительное
               </label>
-              <label class="feedback__label">
+              <label class="feedback__label feedback__label--radio">
                 <input class="feedback__radio" type="radio" name="feedback" value="negative">
                 Скорее отрицательное
               </label>
-              <label class="feedback__label">
+              <label class="feedback__label feedback__label--radio">
                 <input class="feedback__radio" type="radio" name="feedback" value="no-answer">
                 Затрудняюсь ответить
               </label>
@@ -115,22 +115,24 @@
 
           <fieldset class="feedback__fieldset">
             <legend class="feedback__legend">Посещенные достопримечательности:</legend>
-            <label>
-              <input  class="feedback__checkbox" type="checkbox" name="sights" value="Devil's bridge" checked>
-              Мост Дьявола
-            </label>
-            <label>
-              <input  class="feedback__checkbox" type="checkbox" name="sights" value="Bell Rock" checked>
-              Гора-Колокол
-            </label>
-            <label>
-              <input  class="feedback__checkbox" type="checkbox" name="sights" value="Slide Rock State Park" checked>
-              Слайд-парк
-            </label>
-            <label>
-              <input  class="feedback__checkbox" type="checkbox" name="sights" value="Red Rock Country">
-              Красные скалы
-            </label>
+            <div class="feedback__fieldset-wrapper">
+              <label class="feedback__label feedback__label--checkbox">
+                <input  class="feedback__checkbox" type="checkbox" name="sights" value="Devil's bridge" checked>
+                Мост Дьявола
+              </label>
+              <label class="feedback__label feedback__label--checkbox">
+                <input  class="feedback__checkbox" type="checkbox" name="sights" value="Bell Rock" checked>
+                Гора-Колокол
+              </label>
+              <label class="feedback__label feedback__label--checkbox">
+                <input  class="feedback__checkbox" type="checkbox" name="sights" value="Slide Rock State Park" checked>
+                Слайд-парк
+              </label>
+              <label class="feedback__label feedback__label--checkbox">
+                <input  class="feedback__checkbox" type="checkbox" name="sights" value="Red Rock Country">
+                Красные скалы
+              </label>
+            </div>
           </fieldset>
 
           <fieldset class="feedback__fieldset">
@@ -210,6 +212,8 @@
         </div>
       </div>
     </div>
+
+    <div class="overlay"></div>
 
     <script src="../js/script.js"></script>
   </body>

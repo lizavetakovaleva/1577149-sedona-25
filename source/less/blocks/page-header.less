@@ -1,4 +1,6 @@
 .page-header__title {
+  margin-top: 36px;
+  margin-bottom: 26px;
   font-weight: 700;
   font-size: 18px;
   line-height: 26px;
@@ -6,5 +8,26 @@
 }
 
 .page-header__description {
+  width: 280px;
+  margin: 0 auto;
   text-align: center;
+}
+
+//Планшет
+
+
+@media (min-width: @tablet-width) {
+  .page-header__title {
+    margin-top: 64px;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 26px;
+  }
+
+  .page-header__description {
+    width: 435px;
+    margin-bottom: 78px;
+    font-size: 14px;
+    line-height: 24px;
+  }
 }

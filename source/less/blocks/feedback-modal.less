@@ -1,5 +1,5 @@
 .feedback-modal {
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -11,19 +11,37 @@
 }
 
 .feedback-modal__title {
+  display: block;
+  margin: 0;
+  margin-bottom: 28px;
+  padding: 0;
   font-weight: 700;
   font-size: 18px;
   line-height: 26px;
 }
 
 .feedback-modal__description {
+  width: 237px;
+  margin: 0 auto;
+  margin-bottom: 28px;
   color: @darkgrey;
 }
 
 .feedback-modal__button-wrapper {
-  padding: 44px 91px;
+  padding: 20px;
   background-color: @formgrey;
 }
+
+.feedback-modal--error {
+  display: none;
+  padding: 45px 41px 35px;
+}
+
+.feedback-modal--sucsess {
+  display: none;
+}
+
+//Планшет
 
 @media (min-width: @tablet-width) {
   .feedback-modal--error {
@@ -32,5 +50,10 @@
 
   .feedback-modal--sucsess {
     width: 640px;
+  }
+
+  .feedback-modal__title {
+    font-size: 30px;
+    line-height: 40px;
   }
 }

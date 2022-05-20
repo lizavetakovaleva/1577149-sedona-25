@@ -117,9 +117,21 @@
   }
 
   .catalog-item__wrapper {
-    display: flex;
-    justify-content: space-around; //?? Почему остается пространство по краям, как при space between
-    padding: 0 20px;
+    position: relative;
+    //padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 58px;
+  }
+
+  .catalog-item__description-wrapper {
+    position: absolute;
+    left: 20px;
+  }
+
+  .catalog__like {
+    position: absolute;
+    right: 20px;
   }
 }
 
@@ -134,8 +146,59 @@
   }
 
   .catalog__item {
+    position: relative;
+    background-color: transparent;
+
     &:first-child {
       grid-area: img;
     }
+
+    &:nth-child(3) {
+      background-color: transparent;
+    }
+  }
+
+  .catalog__item-image {
+    margin-bottom: 0; //??в десктопной версии после первого фото остается пробел, не получается убрать
+  }
+
+  .catalog__title {
+    margin: 104px auto 31px;
+  }
+
+  .catalog-item__wrapper {
+    position: absolute;
+    bottom: 7px;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 80px;
+    padding: 20px;
+    background-color: fade(@black, 40%);
+  }
+
+  .catalog-item__title,
+  .catalog-item__description,
+  .catalog__like-counter {
+    color: @white;
+  }
+
+  .catalog-item__description {
+    margin: 0;
+  }
+
+  .catalog-item__description-wrapper {
+    position: absolute;
+    left: 21px;
+  }
+
+  .catalog__like {
+    position: absolute;
+    right: 21px;
+  }
+
+  .catalog__like-button path {
+    fill: @white;
+    opacity: 1;
   }
 }
