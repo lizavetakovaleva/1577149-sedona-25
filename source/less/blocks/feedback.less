@@ -5,28 +5,36 @@
 .feedback__wrapper {
   margin: 0 auto;
   margin-bottom: 64px;
-  padding: 64px;
+  padding: 20px;
 }
 
 .feedback__fieldset {
-  width: 100%;
-  height: auto;
-  margin: 0;
-  border: none;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  height: auto;
+  padding-bottom: 23px;
+  border: none;
 }
 
 .feedback__legend {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  padding: 24px 0 20px;
   font-weight: 700;
   font-size: 18px;
   line-height: 26px;
   text-align: center;
+  border-top: 1px solid #e5e5e5;
 }
 
 .feedback__input {
   width: auto;
-  padding: 16px;
+  min-width: 280px;
+  height: 58px;
+  margin-bottom: 16px;
+  padding-left: 16px;
   font-weight: 700;
   font-size: 18px;
   line-height: 26px;
@@ -35,11 +43,15 @@
   border: none;
 }
 
-.feedback__text {
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 26px;
-  background-color: @formgrey;
+.feedback__input:hover {
+  background-color: #e5e5e5;
+  border: none;
+}
+
+.feedback__input:active,
+.feedback__input:focus {
+  background-color: @white;
+  outline: 4px solid #e5e5e5;
 }
 
 .feedback__input-wrapper {
@@ -47,13 +59,127 @@
 }
 
 .feedback__input-contact {
-  padding-right: 60px;
+  width: 100%;
+  min-width: 280px;
 }
 
 .feedback__icon {
   position: absolute;
   top: 0;
+  right: 0; //?? почему остается пустое место справа от иконки
 }
+
+//Радио, чекбокс
+
+.feedback__fieldset-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.feedback__label {
+  position: relative;
+  height: 46px;
+  margin-left: 16px;
+  text-transform: none;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.feedback__label--radio,
+.feedback__label--checkbox {
+  margin-bottom: 16px;
+  padding-left: 60px;
+}
+
+.feedback__radio,
+.feedback__checkbox {
+  appearance: none;
+}
+
+.feedback__label--radio::before {
+  display: inline-block;
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: @formgrey;
+}
+
+.feedback__label--radio::after { //?? Не получается прицепить сюда чекнутое поле
+  display: inline-block;
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: @darkgrey;
+}
+
+.feedback__label--checkbox::before {
+  display: inline-block;
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 45px;
+  height: 45px;
+  border-radius: 4px;
+  background-color: @formgrey;
+}
+
+.feedback__label--checkbox::after {
+  display: inline-block;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 15px;
+  width: 17px;
+  height: 9px;
+  border-bottom: 3px solid @darkgrey;
+  border-left: 3px solid @darkgrey;
+  transform: rotate(-45deg);
+}
+
+.feedback__text {
+  min-width: 279px; //?? Справа вылезает за пределы
+  width: 100%;
+  margin: 0 auto;
+  padding: 16px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  background-color: @formgrey;
+  border: none;
+
+  &::placeholder {
+    color: fade(@black, 30%);
+  }
+}
+
+.feedback__wrapper-button {
+  display: flex;
+  flex-direction: column;
+}
+
+.feedback__button {
+  margin: 0 auto;
+}
+
+.feedback__footnote {
+  align-self: flex-end;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 21px;
+  color: #33333399;
+}
+
+//Планшет
 
 @media (min-width: @tablet-width) {
   .feedback__wrapper {
@@ -68,6 +194,7 @@
       grid-area: name;
       display: flex;
       flex-direction: column;
+      border-right: 1px solid #dbdbdb;
     }
 
     &:nth-child(2) {
@@ -78,15 +205,33 @@
 
     &:nth-child(3) {
       grid-area: impres;
+      border-top: 1px solid #dbdbdb;
     }
 
     &:nth-child(4) {
       grid-area: attr;
+      border-top: 1px solid #dbdbdb;
     }
 
     &:nth-child(5) {
       grid-area: feedback;
+      border-top: 1px solid #dbdbdb;
     }
+  }
+
+  .feedback__input {
+    width: 280px;
+  }
+
+  .feedback__icon {
+    top: 0;
+    right: 130px;
+  }
+
+  .feedback__legend {
+    width: 402px;
+    margin-bottom: 28px;
+    border: none;
   }
 
   .feedback__wrapper-button {
@@ -100,14 +245,37 @@
   .feedback__fieldset-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    justify-items: center;
-    align-items: baseline;
+    //justify-items: center;
+    //align-items: baseline;
+  }
+
+  .feedback__text {
+    max-width: 648px;
   }
 }
+
+//Десктоп
 
 @media (min-width: @desktop-width) {
   .feedback__fieldset-wrapper {
     display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; //?? Чекбоксы не получается выровнять
+  }
+
+  .feedback__fieldset-wrapper--radio {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .feedback__input {
+    width: 430px;
+  }
+
+  .feedback__icon {
+    top: 0;
+    right: 110px;
+  }
+
+  .feedback__text {
+    max-width: 768px;
   }
 }

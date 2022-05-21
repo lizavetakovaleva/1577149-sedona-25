@@ -12,15 +12,15 @@
 }
 
 .main-header__image {
-  position: absolute;
-  top: 25%;
+  position: absolute; //Надпись Седона посреди шапки на главной
+  top: 23%;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .main-header__intro {
   display: block;
-  min-height: 389px;
+  min-height: 389px; //Высота картинки на главной в мобиле
   background-color: @backgroundblue;
   background-image: url("/img/svg/intro-triangle.svg"), url("../img/back-desktop.jpg");
   background-repeat: no-repeat, no-repeat;
@@ -29,17 +29,45 @@
   text-align: center;
 }
 
-@media (min-width: @tablet-width) {
-  .main-header__intro {
-    min-height: 518px;
-  }
+.main-header__image--pages {
+  position: absolute; //Надпись Седона посреди шапки в каталоге
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
 
+.main-header__intro--pages {
+  min-height: 158px; //Высота картинки в каталоге в мобиле
+}
+
+//Планшет
+
+@media (min-width: @tablet-width) {
   .main-header__logo {
     z-index: 5;
   }
 
+  .main-header__intro {
+    min-height: 520px; //Высота картинки на главной
+  }
+
   .main-header__image {
-    width: 461px;
-    height: 350px;
+    width: 461px; //Надпись Седона посреди шапки
+  }
+
+  .main-header__intro--pages {
+    min-height: 290px; //Высота картинки в каталоге
+  }
+
+  .main-header__image--pages {
+    top: 43%;
+  }
+}
+
+//Десктоп
+
+@media (min-width: @desktop-width) {
+  .main-header__intro--pages {
+    min-height: 300px;
   }
 }
