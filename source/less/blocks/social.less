@@ -10,22 +10,21 @@
   margin-right: 6px;
 }
 
-.social__link svg {
-  fill: @blue;
+.social__link {
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 12px;
+  width: 48px;
+  height: 48px;
+  background-color: #81b3d2;
+  fill: #ffffff;
 
   &:hover {
-    fill: #669ec0;
+    background-color: #669ec0;
   }
 
   &:active {
-    fill: #5496bd, fade(@white, 30%);
-  }
-}
-
-.social__link path {
-  fill: @white;
-
-  &:active {
-    fill: fade(@white, 30%);
+    background-color: #5496bd;
+    fill: rgba(#ffffff, 0.3);
   }
 }

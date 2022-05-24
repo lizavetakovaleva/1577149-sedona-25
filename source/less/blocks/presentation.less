@@ -22,6 +22,11 @@
   color: @darkgrey;
 }
 
+.presentation__video {
+  width: 100%;
+  height: 177px;
+}
+
 //планшет
 
 @media (min-width: @tablet-width) {
@@ -41,5 +46,13 @@
     width: 648px;
     height: 500px;
     margin-bottom: 76px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .presentation__video {
+    width: 100%;
+    max-width: 800px;
+    height: 500px;
   }
 }

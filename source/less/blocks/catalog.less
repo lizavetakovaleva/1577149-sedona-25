@@ -57,6 +57,7 @@
   margin-right: 5px;
   background-color: transparent;
   border: none;
+  fill: fade(@black, 30%);
 }
 
 .catalog__like-counter {
@@ -105,11 +106,7 @@
 
   .catalog__item-image {
     min-height: 267px;
-    margin-bottom: 19px;
-  }
-
-  .catalog__item-image--big {
-    min-height: 400px;
+    //margin-bottom: 19px;
   }
 
   .catalog-item__title {
@@ -196,9 +193,13 @@
     position: absolute;
     right: 21px;
   }
-
+  /*
   .catalog__like-button path {
     fill: @white;
     opacity: 1;
+  } */
+
+  .catalog__like-button {
+    fill: @white;
   }
 }
