@@ -110,15 +110,19 @@
 }
 
 .feedback__radio:checked + .feedback__label--radio::before {
-  content: "";
-  position: absolute;
-  top: -10px;
-  left: 0;
-  width: 45px;
-  height: 45px;
   background-image: url("../img/svg/radio-on.svg");
-  background-repeat: no-repeat;
-  background-position: 0 0;
+}
+
+.feedback__radio:hover + .feedback__label--radio::before {
+  background-image: url("../img/svg/radio-off-hover.svg");
+}
+
+.feedback__radio:hover:checked + .feedback__label--radio::before {
+  background-image: url("../img/svg/radio-on-hover.svg");
+}
+
+.feedback__radio:active:checked + .feedback__label--radio::before {
+  background-image: url("../img/svg/radio-on-active.svg");
 }
 
 .feedback__checkbox + .feedback__label--checkbox::before {
@@ -134,15 +138,19 @@
 }
 
 .feedback__checkbox:checked + .feedback__label--checkbox::before {
-  content: "";
-  position: absolute;
-  top: -10px;
-  left: 0;
-  width: 45px;
-  height: 45px;
   background-image: url("../img/svg/checkbox-on.svg");
-  background-repeat: no-repeat;
-  background-position: 0 0;
+}
+
+.feedback__checkbox:hover:checked + .feedback__label--checkbox::before {
+  background-image: url("../img/svg/checkbox-on-hover.svg");
+}
+
+.feedback__checkbox:hover + .feedback__label--checkbox::before {
+  background-image: url("../img/svg/checkbox-off-hover.svg");
+}
+
+.feedback__checkbox:active:checked + .feedback__label--checkbox::before {
+  background-image: url("../img/svg/checkbox-on-active.svg");
 }
 
 .feedback__wrapper-label {
