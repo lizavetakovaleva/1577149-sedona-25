@@ -189,10 +189,10 @@
 @media (min-width: @tablet-width) {
   .feedback__wrapper {
     display: grid;
-    //gap: 48px;
+    gap: 0 20px;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "name contacts" "impres impres" "attr attr" "feedback feedback" "submit submit";
-    padding: 0 60px;
+    //padding: 0 60px;
   }
 
   .feedback__fieldset {
@@ -200,14 +200,26 @@
       grid-area: name;
       display: flex;
       flex-direction: column;
-      margin-right: 20px;
+      margin: 0;
+      padding-right: 43px;
       border-right: 1px solid #dbdbdb;
+
+      .feedback__legend {
+        padding-right: 0;
+        padding-left: 0;
+      }
     }
 
     &:nth-child(2) {
       grid-area: contacts;
       display: flex;
       flex-direction: column;
+      padding-left: 23px;
+
+      .feedback__legend {
+        padding-right: 0;
+        padding-left: 0;
+      }
     }
 
     &:nth-child(3) {
@@ -224,6 +236,8 @@
       grid-area: feedback;
       border-top: 1px solid #dbdbdb;
     }
+
+    width: auto;
   }
 
   .feedback__icon {
@@ -232,8 +246,10 @@
   }
 
   .feedback__legend {
-    width: 402px;
+    //width: 402px;
+    width: auto;
     margin-bottom: 28px;
+    padding: 24px 58px 20px;
     font-size: 21px;
     border: none;
   }
