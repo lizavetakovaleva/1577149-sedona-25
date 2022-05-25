@@ -47,7 +47,8 @@
       background-color: #669ec0;
     }
 
-    &:active {
+    &:active,
+    &:focus {
       background-color: #5496bd;
       color: fade(@white, 30%);
     }
@@ -78,11 +79,16 @@
       color: @blue;
     }
 
-    &:active {
+    &:active,
+    &:focus {
       color: fade(@black, 30%);
     }
+  }
 
-    &--current {
+  .site-list__link--current {
+    color: #766357;
+
+    &:hover {
       color: #766357;
     }
   }

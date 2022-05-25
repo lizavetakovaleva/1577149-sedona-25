@@ -1,39 +1,35 @@
 .copyright {
+  margin-top: 40px;
+  padding-bottom: 29px;
+}
+
+.copyright__link {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0;
-  padding: 40px 95px 20px;
-}
-
-.copyright__text {
-  vertical-align: middle;
-  margin-right: 10px;
+  text-decoration: none;
+  fill: @black;
   color: @black;
 
   &:hover {
+    fill: @blue;
     color: @blue;
   }
 
-  &:active {
+  &:active,
+  &:focus {
+    fill: #b3b3b3;
     color: #b3b3b3;
   }
 }
 
-.copyright__link {
-  fill: @black;
-
-  &:hover {
-    fill: @blue;
-  }
-
-  &:active {
-    fill: #b3b3b3;
-  }
+.copyright__text {
+  margin-right: 10px;
 }
 
 @media (min-width: @tablet-width) {
   .copyright {
+    margin: 0;
     padding: 0;
   }
 }

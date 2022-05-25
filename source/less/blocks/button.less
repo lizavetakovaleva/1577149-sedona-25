@@ -7,4 +7,14 @@
   background-color: @blue;
   color: @white;
   border: none;
+
+  &:hover {
+    background-color: #669ec0;
+  }
+
+  &:active,
+  &:focus {
+    background-color: #5496bd;
+    color: fade(@white, 30%);
+  }
 }
